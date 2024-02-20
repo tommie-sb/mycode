@@ -49,9 +49,7 @@ def bag_info():
 #dogleg_direction = input(crayons.green("Is it a dogleg left, right? Left, Right, or Nope!: "))
 
 
-def main():
-#    hole_length = float(input(crayons.green("Aright dude! Let's throw some discs! How long is this one? (only the number in feet): ")))
- #   dogleg_direction = input(crayons.green("Is it a dogleg left, right? Left, Right, or Nope!: "))
+def main(hole_length, dogleg_direction):
 
     if hole_length <= 200:
         suggested_discs = ["Penrose", "Praxis", "Harp"]
@@ -63,9 +61,9 @@ def main():
         suggested_discs = ["Grace", "Rive"]
 
     if dogleg_direction == "left":
-        suggested_discs = [disc for disc in suggested_discs if discs[disc]["turn"] < 0]
+        suggested_discs = [disc for disc in suggested_discs if discs[disc]["turn"] <= 0]
     elif dogleg_direction == "right":
-        suggested_discs = [disc for disc in suggested_discs if discs[disc]["fade"] > 3]
+        suggested_discs = [disc for disc in suggested_discs if discs[disc]["fade"] >= 3]
 
     # Display the suggested disc types
     print(f"For a hole length of {hole_length} feet and a dogleg direction of {dogleg_direction}, I would suggest throwing:")
@@ -77,7 +75,8 @@ def main():
 
 bag_info()
 
-hole_length = float(input(crayons.green("Aright dude! Let's throw some discs! How long is this one? (only the number in feet): ")))
+hole_length = int(input(crayons.green("Aright dude! Let's throw some discs! How long is this one? (only the number in feet): ")))
 dogleg_direction = input(crayons.green("Is it a dogleg left, right? Left, Right, or Nope!: "))
 
+print(crayons.red("Calculating...."))
 main(hole_length, dogleg_direction.lower())
