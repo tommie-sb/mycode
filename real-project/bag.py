@@ -1,4 +1,5 @@
 discs = {
+    "Glitch": {"speed": 1, "glide":7, "turn":0, "fade":0},
     "Penrose": {"speed": 2, "glide": 4, "turn": 0, "fade": 2},
     "Praxis": {"speed": 3, "glide": 3, "turn": 0, "fade": 1},
     "Harp": {"speed": 4, "glide": 3, "turn": 0, "fade": 4},
